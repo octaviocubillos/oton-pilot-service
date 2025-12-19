@@ -1,0 +1,44 @@
+@host=http://localhost:3000/api/proxy
+# @uat=http://192.168.1.241:3000/api/proxy
+# @uat=https://proxy.oton.cl/api/proxy
+
+
+###
+GET {{host}}/cache-clear
+
+###
+POST {{host}}
+Content-Type: application/json
+
+{
+    "subdomain": "google5",
+    "target": "google.cl"
+}
+
+###
+GET {{host}}  
+
+###
+GET {{host}}/default
+
+###
+GET {{host}}?
+    # &subdomain=node22-test
+    # &last
+
+###
+GET {{host}}/11
+
+
+
+###
+DELETE {{host}}/4
+
+###
+PUT {{host}}/5
+Content-Type: application/json
+
+{
+    "subdomain": "trest",
+    "target": "google.cl"
+}

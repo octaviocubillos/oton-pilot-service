@@ -1,0 +1,30 @@
+{
+  "name": "oton-pilot-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/server.ts --bundle --platform=node --outfile=dist/server.min.js --external:sqlite3",
+    "dev": "npx ts-node-dev --no-deprecation --poll --respawn --transpile-only src/server.ts",
+    "release": "esbuild src/server.ts --bundle --minify --platform=node --outfile=releases/server.min.js --external:sqlite3",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octavio.cubillos/simple-logger-express": "^1.0.11",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/http-proxy-middleware": "^0.19.3",
+    "@types/node": "^24.10.1",
+    "@types/sqlite3": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

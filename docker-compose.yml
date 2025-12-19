@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  oton-pilot-service:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - HOST=proxy.oton.cl
+      - DB_PATH=/data/database.db
+    volumes:
+      - ./data:/data

@@ -1,0 +1,39 @@
+@endpoint=http://service.localhost:3000/api
+@uat=http://192.168.1.241:3000/api
+
+
+###
+GET {{uat}}/service/health
+
+###
+GET {{uat}}/deploy/test
+    ?
+    &last
+    # &status=ERROR
+content-type: application/json
+
+###
+GET {{uat}}/deploy/test
+content-type: application/json
+
+###
+GET {{endpoint}}/test-stack/168
+content-type: application/json
+
+###
+POST {{endpoint}}/test-curl
+content-type: application/json
+
+{
+    "status": "PROCESSING",
+    "resources": [{"name":"test","status":"PENDING"}]
+}
+
+
+###
+PUT {{endpoint}}/test-curl/195
+content-type: application/json
+
+{
+    "status": "SUCCESS"
+}
